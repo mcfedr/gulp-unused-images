@@ -29,9 +29,11 @@ function unusedImages() {
                     ngUsedImages.push(attribs['ng-src']);
                 }
             }
+			// eg shortcut icon apple-touch-icon, it doesnt matter if we add extras that are not images
             else if (name === 'link' && attribs.href) {
                 addUsed(attribs.href);
             }
+			// eg msapplication-xxx
             else if (name === 'meta' && attribs.content) {
                 addUsed(attribs.content);
             }
