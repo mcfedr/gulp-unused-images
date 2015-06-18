@@ -17,5 +17,5 @@ Stream all the images, css and html files that you have into it, it emits errors
 
 The output lists the images that it found no references to and any ng-src attributes that it saw, allowing you to try and decided what that would refer to
 
-Error: Unused images: arrow_grey_right.png, bg-circel-not-empty-small.png
-ng-src: {{ app.iconUrl || 'images/generic_android_icon.png' }}
+    Error: Unused images: arrow_grey_right.png, bg-circel-not-empty-small.png
+    ng-src: {{ app.iconUrl || 'images/generic_android_icon.png' }}
