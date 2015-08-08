@@ -37,6 +37,10 @@ function unusedImages() {
             else if (name === 'meta' && attribs.content) {
                 addUsed(attribs.content);
             }
+            // video posters
+            else if (name == 'video' && attribs.poster) {
+                addUsed(attribs.poster);
+            }
         }
     });
 
