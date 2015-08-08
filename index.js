@@ -8,7 +8,8 @@ var through2 = require('through2'),
 
 var PLUGIN_NAME = 'gulp-unused-images';
 
-function unusedImages() {
+function unusedImages(options) {
+    options.log = options.log === undefined ? true : options.log;
     function addUsed(imageUrl) {
         if (!imageUrl.match(/(data|http|https):/)) {
             usedImageNames.push(path.basename(imageUrl));
@@ -86,7 +87,7 @@ function unusedImages() {
 
     transform.on('finish', function () {
         var unused = _.difference(imageNames, usedImageNames);
-        if (unused.length) {
+        if (unused.length && options.log) {
             this.emit('error', new Error('Unused images: ' + unused.join(', ') + '\nng-src: ' + ngUsedImages.join(', ')));
         }
     });

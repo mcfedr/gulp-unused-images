@@ -1,6 +1,11 @@
 # Unused Images
 
-Attempts to list all the images that are not referenced in your html and css
+Attempts to list all the images that are not referenced in your html and css.
+
+Images are match by filename only. This is because its likely that the 'filesystem' that a browser will see is very
+different from the one that gulp sees.
+
+Images with absolute urls will also be ignored.
 
 ## Usage
 
@@ -12,6 +17,15 @@ Stream all the images, css and html files that you have into it, it emits errors
 	        .pipe(unusedImages())
 	        .pipe(plumber.stop());
 	});
+	
+## Options
+
+### options.log
+
+* Type: `Boolean`
+* Default: `true`
+
+Whether to emit errors for unused images
 	
 ## Output
 
