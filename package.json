@@ -1,6 +1,6 @@
 {
   "name": "gulp-unused-images",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Attempts to list images that are not used",
   "main": "index.js",
   "scripts": {
