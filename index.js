@@ -9,7 +9,7 @@ var through2 = require('through2'),
 var PLUGIN_NAME = 'gulp-unused-images';
 
 function unusedImages(options) {
-    options.log = options.log === undefined ? true : options.log;
+    options = options || {log: true};
     function addUsed(imageUrl) {
         if (!imageUrl.match(/(data|http|https):/)) {
             usedImageNames.push(path.basename(imageUrl));
